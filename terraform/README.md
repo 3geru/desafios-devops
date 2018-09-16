@@ -53,7 +53,7 @@ TBZfKQ/jf6rTzqb5EhPmTCjLu3ng3V1YKfuDk86nPYg8oxFy9poqO8mb9xNBPqQ4AeXeDh
 xp5m9OkQtNroV85lAAAAEmpvbGl2ZWlyYUBsYXB0b3BqYg==
 -----END OPENSSH PRIVATE KEY-----
 ```
-Obs: APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INTÂNCIAS DE TESTES.
+Obs: **APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INTÂNCIAS DE TESTES.**
 
 Criei como modulo o resource da instância. As variáveis são passadas pelo apache-instance.tf.
 
@@ -69,7 +69,7 @@ O diretório variables é apenas para exemplificação de separação de variáv
 Se quiser alterar o nome do bucket  e/ou a chave de acesso à instância por favor altere nos correspondetes arquivos antes de iniciar o deploy do ambiente.
 
 ### Download do terraform 
-* Este procedimento tem como base a instalação em um ambiente com Sistema Operacional Linux. Caso utilize outro, por favor acesse a pagina de download: https://www.terraform.io/downloads.html 
+* Este procedimento tem como base a instalação em um ambiente com Sistema Operacional Linux. Caso utilize outro, por favor acesse a pagina de [download](https://www.terraform.io/downloads.html)
 ```
 curl https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip 
 unzip terraform_0.11.8_linux_amd64.zip
@@ -90,11 +90,11 @@ terraform plan -var-file=variables/production.tfvars -refresh=true -parallelism 
 terraform apply terraform.plan
 ```
 
-No final da execucao uma mensagem com o endereco publico sera exibido.
+No final da execucao uma mensagem com o endereco publico para acesso ao apache sera exibido.
 
 ## Remocao
 
-Para remocao dos recursos criados será necessário executar o plan com o parâmetro "-destroy"
+Para remocao dos recursos criados sera necessario executar o plan com o parâmetro "-destroy"
 ```
 terraform plan -var-file=variables/production.tfvars -refresh=true -parallelism 3 -out terraform.plan -destroy
 terraform apply terraform.plan
