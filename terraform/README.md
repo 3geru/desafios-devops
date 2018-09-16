@@ -1,6 +1,6 @@
 # Desafio 01: Infrastructure-as-code - Terraform
 ## Objetivo
-Este projeto tem o objetivo criar uma instância na AWS utilizando terraform como gerenciador de configuração.
+Este projeto tem o objetivo criar uma instancia na AWS utilizando terraform como gerenciador de configuracao.
 
 ## Estrutura
 ```
@@ -23,7 +23,7 @@ Este projeto tem o objetivo criar uma instância na AWS utilizando terraform com
  - vars.tf
 ```
  
-Para acesso à instância criada foi configurada uma chave. A chave privada correspondente é:
+Para acesso a instancia criada foi configurada uma chave. A chave privada correspondente e:
 ```
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
@@ -53,7 +53,7 @@ TBZfKQ/jf6rTzqb5EhPmTCjLu3ng3V1YKfuDk86nPYg8oxFy9poqO8mb9xNBPqQ4AeXeDh
 xp5m9OkQtNroV85lAAAAEmpvbGl2ZWlyYUBsYXB0b3BqYg==
 -----END OPENSSH PRIVATE KEY-----
 ```
-**Obs: APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INSTÂNCIAS DE TESTES.**
+**Obs: APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INSTANCIAS DE TESTES.**
 
 Para utilizacao do modulo foi escolhido o resource da instância. As variaveis sao passadas pelo arquivo apache-instance.tf.
 
@@ -61,15 +61,14 @@ O backend do terraform foi configurado no S3. A criacao do bucket pode ser feita
 ```
 aws s3api create-bucket --bucket terraform.devops-testes.idwall --region us-east-1
 ```
-
-O diretório variables é apenas para exemplificação de separação de variáveis exclusivas de ambientes.
+O diretorio variables e apenas para exemplificacao de separacao de variaveis exclusivas de ambientes.
 
 ## Execucao
 
-Se quiser alterar o nome do bucket  e/ou a chave de acesso à instância por favor altere nos correspondetes arquivos antes de iniciar o deploy do ambiente.
+Se quiser alterar o nome do bucket e/ou a chave de acesso a instancia por favor altere nos correspondetes arquivos antes de iniciar o deploy do ambiente.
 
 ### Download do terraform 
-* Este procedimento tem como base a instalação em um ambiente com Sistema Operacional Linux. Caso utilize outro, por favor acesse a pagina de [download](https://www.terraform.io/downloads.html)
+* Este procedimento tem como base a instalacao em um ambiente com Sistema Operacional Linux. Caso utilize outro, por favor acesse a pagina de [download](https://www.terraform.io/downloads.html)
 ```
 curl https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip 
 unzip terraform_0.11.8_linux_amd64.zip
