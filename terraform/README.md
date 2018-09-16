@@ -84,7 +84,7 @@ git clone https://github.com/jbaojunior/desafios-devops
 
 ### Execucao do Terraform
 ```
-cd desafios-devops
+cd desafios-devops/terraform
 terraform init
 terraform plan -var-file=variables/production.tfvars -refresh=true -parallelism 3 -out terraform.plan
 terraform apply terraform.plan
