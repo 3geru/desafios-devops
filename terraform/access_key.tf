@@ -1,0 +1,4 @@
+resource "aws_key_pair" "devops_teste" {
+  key_name   = "devops_teste"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0e4FZ00zwc8znr4al8hBlKhZR0Dlyj4c2oZBQiRx6l9l3R8ZShkKqeSeqCOUFMOEmMwWN0W7ybK+VU9jhX8zZMSBvFduZpmDLRGaU+SK7N8GCXz7S1Kkcr/2gmyM2hRbD4orvwLN14/uvZzcWcVkjei6GcJYvbR9NikhTDjtqRg01OvvPBUhZO/C1WQkOk11TzuDc5t4NvoWMb+AGP7u/cHlaTaWCJLHLxIKnWrgn0P1YwZ5LJsPWQrTjqIrSUqviYvvAHPJlh1d33ZZ7/o964Z37x7o8vMteSQCT5hDBpzrEs9qslyt8h2ZYaUwbTy9aay1JQO08UA4Y1y+lzc4J joliveira@laptopjb"
+}
