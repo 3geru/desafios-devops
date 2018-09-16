@@ -53,11 +53,11 @@ TBZfKQ/jf6rTzqb5EhPmTCjLu3ng3V1YKfuDk86nPYg8oxFy9poqO8mb9xNBPqQ4AeXeDh
 xp5m9OkQtNroV85lAAAAEmpvbGl2ZWlyYUBsYXB0b3BqYg==
 -----END OPENSSH PRIVATE KEY-----
 ```
-Obs: **APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INTÂNCIAS DE TESTES.**
+**Obs: APENAS POR FINS DE TESTES ESTOU COLOCANDO A PRIVATE KEY EM UM REPOSITORIO. ESTA CHAVE FOI CRIADA APENAS PARA O ACESSO AS INSTÂNCIAS DE TESTES.**
 
-Criei como modulo o resource da instância. As variáveis são passadas pelo apache-instance.tf.
+Para utilizacao do modulo foi escolhido o resource da instância. As variaveis sao passadas pelo arquivo apache-instance.tf.
 
-O backend do terraform foi configurado no S3. A criação do bucket pode ser feita pelo console ou pelo aws-cli:
+O backend do terraform foi configurado no S3. A criacao do bucket pode ser feita pelo console ou pelo aws-cli:
 ```
 aws s3api create-bucket --bucket terraform.devops-testes.idwall --region us-east-1
 ```
@@ -77,7 +77,7 @@ chmod +x terraform
 sudo mv terraform /usr/local/bin
 ```
 
-### Clone do repositório
+### Clone do repositorio
 ```
 git clone https://github.com/jbaojunior/desafios-devops
 ```
