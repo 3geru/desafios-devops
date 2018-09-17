@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: devops-app
+  namespace: devops-teste
+spec:
+  backend:
+    serviceName: devops-app
+    servicePort: 3000

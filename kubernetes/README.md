@@ -1,5 +1,56 @@
 # Desafio 02: Kubernetes
+## Objetivo
+Este projeto tem o objetivo criar uma aplicação em um cluster Kubernetes.
 
+## Estrutura
+```
+/
+- namespace.yaml
+- deployment.yaml
+- service.yaml 
+- ingress.yaml
+```
+
+O arquivo namespace.yaml é a diretiva para a criacao de uma namespace separado para deploy da aplicacao. O namespace que é criado é devops-teste. 
+
+O arquivo deployment.yaml e o arquivo com a principal diretiva para criacao do pod e do replica resource. Foi definido como health-check a url /healthz. A variavel NAME também está explicitada neste arquivo. Caso deseje mudar execute o comando abaixo:
+```
+kubectl set env deployments.apps/devops-app NAME=NOVO_NOME -n devops-teste
+```
+
+Os arquivos service.yaml e ingress.yaml criam os resource necessarios para a camada de network.
+
+## Execucao
+Os testes foram efetuados utilizando Minikube para a criacao de um cluster. Pos isso e necessario executar alguns passos antes do deploy da aplicacao:
+``` 
+eval $(minikube docker-env)
+minikube addons enable ingress
+```
+
+Apos o export das variaveis do minikube e possivel criar a imagem do container:
+```
+docker build -t devops-app .
+```
+
+Com um unico comando especificando todos os arquivos para criacao dos resources criamos a aplicacao:
+```
+kubectl create -f namespace.yaml -f deployment.yaml -f service.yaml -f ingress.yaml
+```
+
+Para remocao da aplicacao e do namespace podemos utilizar o comando delete especificando os mesmos arquivos:
+```
+kubectl delete -f ingress.yaml -f service.yaml -f deployment.yaml -f namespace.yaml
+```
+
+Para fins de testes da imagem e possivel utilizar o comando run que ira executar a aplicacao
+```
+kubectl create namespace devops-teste
+kubectl run devops-app --image=devops-app --image-pull-policy=Never --env NAME="Joao Batista" --expose=true --limits=cpu=100m,memory=256Mi --port=3000 -n devops-teste
+```
+
+#######################################################################################
+READ ME Original
+#######################################################################################
 ## Motivação
 
 Kubernetes atualmente é a principal ferramenta de orquestração e _deployment_ de _containers_ utilizado no mundo, práticamente tornando-se um padrão para abstração de recursos de infraestrutura. 
