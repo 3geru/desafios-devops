@@ -63,6 +63,19 @@ aws s3api create-bucket --bucket terraform.devops-testes.idwall --region us-east
 ```
 O diretorio variables e apenas para exemplificacao de separacao de variaveis exclusivas de ambientes.
 
+Abaixo o script enviado para a instancia que transformado em base64:
+```
+#!/bin/bash
+
+yum install -y docker
+
+chkconfig --add docker
+
+service docker start 
+
+docker run -d -p 80:80 --restart always httpd
+```
+
 ## Execucao
 
 Se quiser alterar o nome do bucket e/ou a chave de acesso a instancia por favor altere nos correspondetes arquivos antes de iniciar o deploy do ambiente.
