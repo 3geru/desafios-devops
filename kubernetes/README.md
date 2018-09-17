@@ -42,14 +42,15 @@ Para remocao da aplicacao e do namespace podemos utilizar o comando delete espec
 kubectl delete -f ingress.yaml -f service.yaml -f deployment.yaml -f namespace.yaml
 ```
 
-Para fins de testes da imagem e possivel utilizar o comando run que ira executar a aplicacao
+Para fins de testes da imagem e possivel utilizar o comando run que executara a aplicacao
 ```
 kubectl create namespace devops-teste
 kubectl run devops-app --image=devops-app --image-pull-policy=Never --env NAME="Joao Batista" --expose=true --limits=cpu=100m,memory=256Mi --port=3000 -n devops-teste
 ```
 
 #######################################################################################
-READ ME Original
+
+READ-ME Original
 #######################################################################################
 ## Motivação
 
